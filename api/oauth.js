@@ -24,10 +24,8 @@ export default async function handler(req, res) {
     });
 
     const data = await response.json();
-
-    console.log("Access token response:", data);
-
-    res.status(200).json({ message: "OAuth successful!", data });
+    console.log("OAuth token exchange success:", data);
+    res.status(200).json({ message: "OAuth successful", data });
   } catch (error) {
     console.error("OAuth error:", error);
     res.status(500).json({ error: "OAuth failed" });
